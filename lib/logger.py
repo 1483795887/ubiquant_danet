@@ -11,7 +11,7 @@ class Train_Log():
             self.log_dir = self.resume_dir
 
         else:
-            self.log_dir = os.path.join('./logs/',  logname + '_' +time_str)
+            self.log_dir = os.path.join('./logs/',  logname)
 
         self.writer = SummaryWriter(self.log_dir)
 
