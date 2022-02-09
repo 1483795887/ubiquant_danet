@@ -39,6 +39,9 @@ class DANsModel(BaseEstimator):
     clip_value: int = 2
     seed: int = 1
     verbose: int = 1
+    cat_idxs: List[int] = field(default_factory=list)
+    cat_dims: List[int] = field(default_factory=list)
+    cat_emb_dim: int = 1
     optimizer_fn: Any = QHAdam
     optimizer_params: Dict = field(default_factory=lambda: dict(lr=8e-3, weight_decay=1e-5, nus=(0.8, 1.0)))
     scheduler_fn: Any = torch.optim.lr_scheduler.StepLR
